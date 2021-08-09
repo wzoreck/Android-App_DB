@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.app_db.databinding.FragmentAddEditMovieBinding
+import com.example.app_db.databinding.FragmentDirectorBinding
 
-class AddEditMovieFragment : Fragment(R.layout.fragment_add_edit_movie)  {
+class DirectorFragment : Fragment(R.layout.fragment_director) {
 
-    private var _binding: FragmentAddEditMovieBinding? = null
+    private var _binding: FragmentDirectorBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -18,7 +18,7 @@ class AddEditMovieFragment : Fragment(R.layout.fragment_add_edit_movie)  {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentAddEditMovieBinding.inflate(inflater, container, false)
+        _binding = FragmentDirectorBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
     }
@@ -31,10 +31,10 @@ class AddEditMovieFragment : Fragment(R.layout.fragment_add_edit_movie)  {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnSaveNewMovie.setOnClickListener {
-            val action = AddEditMovieFragmentDirections.actionAddEditMovieFragmentToMovieFragment()
+        binding.btnTempMovies.setOnClickListener {
+            val action = DirectorFragmentDirections.actionDirectorFragmentToMovieFragment()
             findNavController().navigate(action)
         }
-    }
 
+    }
 }

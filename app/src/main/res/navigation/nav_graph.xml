@@ -22,5 +22,38 @@
         android:id="@+id/addEditMovieFragment"
         android:name="com.example.app_db.AddEditMovieFragment"
         android:label="fragment_add_edit_movie"
-        tools:layout="@layout/fragment_add_edit_movie" />
+        tools:layout="@layout/fragment_add_edit_movie" >
+        <action
+            android:id="@+id/action_addEditMovieFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.example.app_db.MovieFragment"
+        android:label="fragment_movie"
+        tools:layout="@layout/fragment_movie" >
+        <action
+            android:id="@+id/action_movieFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_movieFragment_to_addEditMovieFragment"
+            app:destination="@id/addEditMovieFragment" />
+        <action
+            android:id="@+id/action_movieFragment_to_directorsFragment"
+            app:destination="@id/directorsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/directorsFragment"
+        android:name="com.example.app_db.DirectorsFragment"
+        android:label="fragment_directors"
+        tools:layout="@layout/fragment_directors" />
+    <fragment
+        android:id="@+id/directorFragment"
+        android:name="com.example.app_db.DirectorFragment"
+        android:label="fragment_director"
+        tools:layout="@layout/fragment_director" >
+        <action
+            android:id="@+id/action_directorFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
+    </fragment>
 </navigation>
