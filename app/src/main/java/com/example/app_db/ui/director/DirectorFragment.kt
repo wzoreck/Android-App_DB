@@ -1,4 +1,4 @@
-package com.example.app_db
+package com.example.app_db.ui.director
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.app_db.R
 import com.example.app_db.databinding.FragmentDirectorBinding
 
 class DirectorFragment : Fragment(R.layout.fragment_director) {

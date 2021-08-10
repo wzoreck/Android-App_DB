@@ -1,4 +1,4 @@
-package com.example.app_db
+package com.example.app_db.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

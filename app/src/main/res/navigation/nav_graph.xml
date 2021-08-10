@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.app_db.HomeFragment"
+        android:name="com.example.app_db.ui.movie.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/addEditMovieFragment"
-        android:name="com.example.app_db.AddEditMovieFragment"
+        android:name="com.example.app_db.ui.add_edit_movie.AddEditMovieFragment"
         android:label="fragment_add_edit_movie"
         tools:layout="@layout/fragment_add_edit_movie" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/movieFragment"
-        android:name="com.example.app_db.MovieFragment"
+        android:name="com.example.app_db.ui.movie.MovieFragment"
         android:label="fragment_movie"
         tools:layout="@layout/fragment_movie" >
         <action
@@ -46,7 +46,7 @@
     </fragment>
     <fragment
         android:id="@+id/directorsFragment"
-        android:name="com.example.app_db.DirectorsFragment"
+        android:name="com.example.app_db.ui.director.DirectorsFragment"
         android:label="fragment_directors"
         tools:layout="@layout/fragment_directors" >
         <action
@@ -61,7 +61,7 @@
     </fragment>
     <fragment
         android:id="@+id/directorFragment"
-        android:name="com.example.app_db.DirectorFragment"
+        android:name="com.example.app_db.ui.director.DirectorFragment"
         android:label="fragment_director"
         tools:layout="@layout/fragment_director" >
         <action
@@ -76,7 +76,7 @@
     </fragment>
     <fragment
         android:id="@+id/addEditDirectorFragment"
-        android:name="com.example.app_db.AddEditDirectorFragment"
+        android:name="com.example.app_db.ui.add_edit_director.AddEditDirectorFragment"
         android:label="fragment_add_edit_director"
         tools:layout="@layout/fragment_add_edit_director" >
         <action

@@ -1,4 +1,4 @@
-package com.example.app_db
+package com.example.app_db.ui.add_edit_director
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.app_db.R
 import com.example.app_db.databinding.FragmentAddEditDirectorBinding
-import com.example.app_db.databinding.FragmentAddEditMovieBinding
 
 class AddEditDirectorFragment : Fragment(R.layout.fragment_add_edit_director) {
 

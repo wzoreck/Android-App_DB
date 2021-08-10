@@ -1,12 +1,12 @@
-package com.example.app_db
+package com.example.app_db.ui.movie
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.app_db.R
 import com.example.app_db.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
@@ -42,9 +42,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             findNavController().navigate(action)
         }
 
-        binding.btnTempMovie.setOnClickListener {
+        /*binding.btnTempMovie.setOnClickListener {
             val action = HomeFragmentDirections.actionHomeFragmentToMovieFragment()
             findNavController().navigate(action)
-        }
+        }*/
     }
 }
