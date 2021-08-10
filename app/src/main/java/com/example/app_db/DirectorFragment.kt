@@ -36,6 +36,11 @@ class DirectorFragment : Fragment(R.layout.fragment_director) {
             findNavController().navigate(action)
         }
 
+        binding.btnEdit.setOnClickListener {
+            val action = DirectorFragmentDirections.actionDirectorFragmentToAddEditDirectorFragment()
+            findNavController().navigate(action)
+        }
+
         binding.btnDirectors.setOnClickListener {
             val action = DirectorFragmentDirections.actionDirectorFragmentToDirectorsFragment()
             findNavController().navigate(action)

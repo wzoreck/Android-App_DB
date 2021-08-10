@@ -59,6 +59,9 @@
         <action
             android:id="@+id/action_directorsFragment_to_directorFragment"
             app:destination="@id/directorFragment" />
+        <action
+            android:id="@+id/action_directorsFragment_to_addEditDirectorFragment"
+            app:destination="@id/addEditDirectorFragment" />
     </fragment>
     <fragment
         android:id="@+id/directorFragment"
@@ -71,5 +74,17 @@
         <action
             android:id="@+id/action_directorFragment_to_directorsFragment"
             app:destination="@id/directorsFragment" />
+        <action
+            android:id="@+id/action_directorFragment_to_addEditDirectorFragment"
+            app:destination="@id/addEditDirectorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditDirectorFragment"
+        android:name="com.example.app_db.AddEditDirectorFragment"
+        android:label="fragment_add_edit_director"
+        tools:layout="@layout/fragment_add_edit_director" >
+        <action
+            android:id="@+id/action_addEditDirectorFragment_to_directorFragment"
+            app:destination="@id/directorFragment" />
     </fragment>
 </navigation>
