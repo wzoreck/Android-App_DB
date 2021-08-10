@@ -17,10 +17,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnTempMovies"
+        android:id="@+id/btnTempMovie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Temp Movies"
+        android:text="Temp Movie"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
         app:layout_constraintStart_toStartOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
@@ -34,6 +34,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginRight="40dp"
+        android:layout_marginBottom="40dp" />
+
+    <Button
+        android:id="@+id/btnDirectors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Directors"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnRemove"
+        app:layout_constraintStart_toEndOf="@+id/btnEdit"
         android:layout_marginBottom="40dp" />
 
     <Button

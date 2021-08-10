@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.app_db.databinding.FragmentDirectorsBinding
 
 class DirectorsFragment : Fragment(R.layout.fragment_directors) {
@@ -30,6 +31,15 @@ class DirectorsFragment : Fragment(R.layout.fragment_directors) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.btnTempDirector.setOnClickListener {
+            val action = DirectorsFragmentDirections.actionDirectorsFragmentToDirectorFragment()
+            findNavController().navigate(action)
+        }
+
+        binding.btnMovies.setOnClickListener {
+            val action = DirectorsFragmentDirections.actionDirectorsFragmentToHomeFragment()
+            findNavController().navigate(action)
+        }
 
     }
 }

@@ -31,10 +31,19 @@ class DirectorFragment : Fragment(R.layout.fragment_director) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnTempMovies.setOnClickListener {
+        binding.btnTempMovie.setOnClickListener {
             val action = DirectorFragmentDirections.actionDirectorFragmentToMovieFragment()
             findNavController().navigate(action)
         }
 
+        binding.btnDirectors.setOnClickListener {
+            val action = DirectorFragmentDirections.actionDirectorFragmentToDirectorsFragment()
+            findNavController().navigate(action)
+        }
+
+        binding.btnRemove.setOnClickListener {
+            val action = DirectorFragmentDirections.actionDirectorFragmentToDirectorsFragment()
+            findNavController().navigate(action)
+        }
     }
 }

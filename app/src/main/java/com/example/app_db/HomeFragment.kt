@@ -32,8 +32,18 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.btnDirectors.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToDirectorsFragment()
+            findNavController().navigate(action)
+        }
+
         binding.btnAddNewMovie.setOnClickListener {
             val action = HomeFragmentDirections.actionHomeFragmentToAddEditMovieFragment()
+            findNavController().navigate(action)
+        }
+
+        binding.btnTempMovie.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToMovieFragment()
             findNavController().navigate(action)
         }
     }

@@ -17,6 +17,12 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_directorsFragment"
+            app:destination="@id/directorsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_movieFragment"
+            app:destination="@id/movieFragment" />
     </fragment>
     <fragment
         android:id="@+id/addEditMovieFragment"
@@ -46,7 +52,14 @@
         android:id="@+id/directorsFragment"
         android:name="com.example.app_db.DirectorsFragment"
         android:label="fragment_directors"
-        tools:layout="@layout/fragment_directors" />
+        tools:layout="@layout/fragment_directors" >
+        <action
+            android:id="@+id/action_directorsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_directorsFragment_to_directorFragment"
+            app:destination="@id/directorFragment" />
+    </fragment>
     <fragment
         android:id="@+id/directorFragment"
         android:name="com.example.app_db.DirectorFragment"
@@ -55,5 +68,8 @@
         <action
             android:id="@+id/action_directorFragment_to_movieFragment"
             app:destination="@id/movieFragment" />
+        <action
+            android:id="@+id/action_directorFragment_to_directorsFragment"
+            app:destination="@id/directorsFragment" />
     </fragment>
 </navigation>

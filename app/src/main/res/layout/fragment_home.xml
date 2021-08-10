@@ -10,20 +10,40 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home Fragment"
+        android:text="Home - Movies Fragment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnAddNewMovie"
+        android:id="@+id/btnTempMovie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Movie"
+        android:text="Temp Movie"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         android:layout_marginTop="70dp" />
+
+    <Button
+    android:id="@+id/btnAddNewMovie"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Add Movie"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginBottom="40dp"
+    android:layout_marginRight="40dp" />
+
+    <Button
+        android:id="@+id/btnDirectors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Directors"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="40dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

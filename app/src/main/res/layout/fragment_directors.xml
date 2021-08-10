@@ -7,6 +7,7 @@
     tools:context=".DirectorsFragment" >
 
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Directors Fragment"
@@ -16,13 +17,33 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/btnTempDirector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Temp Director"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        android:layout_marginTop="70dp" />
+
+    <Button
         android:id="@+id/btnAddNewDirector"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Director"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="40dp"
+        android:layout_marginRight="40dp" />
+
+    <Button
+        android:id="@+id/btnMovies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Movies"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="40dp"/>
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="40dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
