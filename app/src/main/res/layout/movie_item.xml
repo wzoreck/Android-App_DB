@@ -6,9 +6,9 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="115dp"
         android:layout_margin="4dp"
-        android:background="#00E0DBE1"
+        android:background="@color/background_movie_item"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -24,9 +24,21 @@
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:text="Movie Name"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textColor="@color/text_gray"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"/>
+
+            <TextView
+                android:id="@+id/txtMovieDirector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:maxLines="1"
+                android:text="@string/director"
+                android:textColor="@color/text_gray"
+                android:textSize="14dp"
+                android:fontFamily="monospace"/>
 
             <TextView
                 android:id="@+id/txtMovieDescription"
@@ -34,7 +46,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:maxLines="1"
-                android:text="Description" />
+                android:text="@string/description"
+                android:textColor="@color/text_gray"
+                android:textSize="14dp"
+                android:fontFamily="monospace"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
