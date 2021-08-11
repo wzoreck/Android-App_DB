@@ -45,13 +45,13 @@ abstract class DirectorRoomDatabase : RoomDatabase() {
                 scope.launch(Dispatchers.IO) {
                     populateDatabase(database.directorDao())
                 }
-
             }
         }
-    }
 
-    suspend fun populateDatabase(directorDao: DirectorDAO) {
-        directorDao.deleteAll()
-        directorDao.insert(Director(0, "Quentin Tarantino"))
+        suspend fun populateDatabase(directorDao: DirectorDAO) {
+            directorDao.deleteAll()
+            directorDao.insert(Director(0, "Quentin Tarantino"))
+        }
     }
+    
 }
