@@ -5,12 +5,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.example.app_db.DirectorApplication
 import com.example.app_db.R
+import com.example.app_db.data.DirectorViewModel
 import com.example.app_db.databinding.FragmentDirectorsBinding
 
 class DirectorsFragment : Fragment(R.layout.fragment_directors) {
 
+    private val directorViewModel: DirectorViewModel by viewModels {
+        DirectorViewModel.DirectorViewModelFactory((activity?.application as DirectorApplication).repository)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val binding = FragmentDirectorsBinding.bind(view)
+
+        val directorAdapter = DirectorAd
+    }
+
+    /*
     private var _binding: FragmentDirectorsBinding? = null
     private val binding get() = _binding!!
 
@@ -47,5 +63,5 @@ class DirectorsFragment : Fragment(R.layout.fragment_directors) {
             findNavController().navigate(action)
         }
 
-    }
+    } */
 }
