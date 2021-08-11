@@ -50,7 +50,12 @@ abstract class DirectorRoomDatabase : RoomDatabase() {
 
         suspend fun populateDatabase(directorDao: DirectorDAO) {
             directorDao.deleteAll()
-            directorDao.insert(Director(0, "Quentin Tarantino"))
+            directorDao.insert(Director(0, "Juca bala"))
+            directorDao.insert(Director(1, "Mazaropi"))
+            directorDao.insert(Director(2, "Maradona"))
+            directorDao.insert(Director(3, "Madona"))
+            directorDao.insert(Director(4, "Tolkin"))
+            directorDao.insert(Director(5, "Toniy RAmos"))
         }
     }
     
