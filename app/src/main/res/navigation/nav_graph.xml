@@ -73,6 +73,9 @@
         <action
             android:id="@+id/action_directorFragment_to_addEditDirectorFragment"
             app:destination="@id/addEditDirectorFragment" />
+        <argument
+            android:name="director"
+            app:argType="com.example.app_db.data.Director" />
     </fragment>
     <fragment
         android:id="@+id/addEditDirectorFragment"

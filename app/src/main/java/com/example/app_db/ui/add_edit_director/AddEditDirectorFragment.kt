@@ -61,7 +61,8 @@ class AddEditDirectorFragment : Fragment(R.layout.fragment_add_edit_director) {
                         directorViewModel.update(director.copy(name=directorName))
                     }
 
-                    val action = AddEditDirectorFragmentDirections.actionAddEditDirectorFragmentToDirectorFragment()
+                    val action = AddEditDirectorFragmentDirections.actionAddEditDirectorFragmentToDirectorFragment(
+                        Director(name = directorName))
                     findNavController().navigate(action)
                 }
             }

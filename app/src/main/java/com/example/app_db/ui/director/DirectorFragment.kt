@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.app_db.R
 import com.example.app_db.databinding.FragmentDirectorBinding
 
@@ -14,14 +16,15 @@ class DirectorFragment : Fragment(R.layout.fragment_director) {
     private var _binding: FragmentDirectorBinding? = null
     private val binding get() = _binding!!
 
+    val args: DirectorFragmentArgs by navArgs()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentDirectorBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     override fun onDestroyView() {
@@ -32,13 +35,15 @@ class DirectorFragment : Fragment(R.layout.fragment_director) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        var director = args.director
+
         binding.btnTempMovie.setOnClickListener {
             val action = DirectorFragmentDirections.actionDirectorFragmentToMovieFragment()
             findNavController().navigate(action)
         }
 
         binding.btnEdit.setOnClickListener {
-            val action = DirectorFragmentDirections.actionDirectorFragmentToAddEditDirectorFragment()
+            val action = DirectorFragmentDirections.actionDirectorFragmentToAddEditDirectorFragment(director)
             findNavController().navigate(action)
         }
 
@@ -49,6 +54,11 @@ class DirectorFragment : Fragment(R.layout.fragment_director) {
 
         binding.btnRemove.setOnClickListener {
             val action = DirectorFragmentDirections.actionDirectorFragmentToDirectorsFragment()
+            findNavController().navigate(action)
+        }
+
+        val callbackList = requireActivity().onBackPressedDispatcher.addCallback(this) {
+            var action = DirectorFragmentDirections.actionDirectorFragmentToDirectorsFragment()
             findNavController().navigate(action)
         }
     }

@@ -43,7 +43,7 @@ class DirectorsFragment: Fragment(R.layout.fragment_directors), DirectorAdapter.
     }
 
     override fun onItemClickListener(director: Director) {
-        var action = DirectorsFragmentDirections.actionDirectorsFragmentToAddEditDirectorFragment(director)
+        var action = DirectorsFragmentDirections.actionDirectorsFragmentToDirectorFragment(director)
         findNavController().navigate(action)
     }
 
