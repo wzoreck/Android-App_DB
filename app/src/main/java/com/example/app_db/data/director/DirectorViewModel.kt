@@ -6,7 +6,7 @@ import kotlinx.coroutines.launch
 
 class DirectorViewModel(private val directorRepository: ApplicationRepository): ViewModel() {
 
-    val allDirectors: LiveData<List<Director>> = directorRepository.allDirector.asLiveData()
+    val allDirectors: LiveData<List<Director>> = directorRepository.allDirectors.asLiveData()
 
     fun insert(director: Director) = viewModelScope.launch {
         directorRepository.insert(director)

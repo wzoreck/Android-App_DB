@@ -3,33 +3,63 @@ package com.example.app_db.data
 import androidx.annotation.WorkerThread
 import com.example.app_db.data.director.Director
 import com.example.app_db.data.director.DirectorDAO
+import com.example.app_db.data.movie.Movie
+import com.example.app_db.data.movie.MovieDAO
 import kotlinx.coroutines.flow.Flow
 
-class ApplicationRepository(private val directorDao: DirectorDAO) {
+class ApplicationRepository(private val directorDao: DirectorDAO, private val movieDao: MovieDAO) {
 
-    val allDirector: Flow<List<Director>> = directorDao.getDirectors()
+    val allDirectors: Flow<List<Director>> = directorDao.getDirectors()
+    val allMovies: Flow<List<Movie>> = movieDao.getMovies()
+    // Adicionar aqui os relacionados
 
+    // Director
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
-    suspend fun insert(director: Director) {
+    suspend fun insertDirector(director: Director) {
         directorDao.insert(director)
     }
 
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
-    suspend fun update(director: Director) {
+    suspend fun updateDirector(director: Director) {
         directorDao.update(director)
     }
 
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
-    suspend fun delete(director: Director) {
+    suspend fun deleteDirector(director: Director) {
         directorDao.delete(director)
     }
 
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
-    suspend fun deleteAll() {
+    suspend fun deleteAllDirectors() {
         directorDao.deleteAll()
+    }
+
+    // Movie
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun insertMovie(movie: Movie) {
+        movieDao.insert(movie)
+    }
+
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun updateMovie(movie: Movie) {
+        movieDao.update(movie)
+    }
+
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun deleteMovie(movie: Movie) {
+        movieDao.delete(movie)
+    }
+
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun deleteAllMovies() {
+        movieDao.deleteAll()
     }
 }
