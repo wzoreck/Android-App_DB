@@ -43,46 +43,8 @@ class DirectorsFragment: Fragment(R.layout.fragment_directors), DirectorAdapter.
     }
 
     override fun onItemClickListener(director: Director) {
-        var action = DirectorsFragmentDirections.actionDirectorsFragmentToDirectorFragment(director)
+        val action = DirectorsFragmentDirections.actionDirectorsFragmentToDirectorFragment(director)
         findNavController().navigate(action)
     }
 
-    /*
-    private var _binding: FragmentDirectorsBinding? = null
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentDirectorsBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.btnTempDirector.setOnClickListener {
-            val action = DirectorsFragmentDirections.actionDirectorsFragmentToDirectorFragment()
-            findNavController().navigate(action)
-        }
-
-        binding.btnMovies.setOnClickListener {
-            val action = DirectorsFragmentDirections.actionDirectorsFragmentToHomeFragment()
-            findNavController().navigate(action)
-        }
-
-        binding.btnAddNewDirector.setOnClickListener {
-            val action = DirectorsFragmentDirections.actionDirectorsFragmentToAddEditDirectorFragment()
-            findNavController().navigate(action)
-        }
-
-    } */
 }

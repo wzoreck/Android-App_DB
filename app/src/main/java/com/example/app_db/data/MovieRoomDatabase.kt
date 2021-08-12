@@ -49,7 +49,7 @@ abstract class MovieRoomDatabase: RoomDatabase() {
         }
 
         suspend fun populateDatabase(movieDao: MovieDAO) {
-//            movieDao.deleteAll()
+//          movieDao.deleteAll()
             movieDao.insert(Movie(name="Iron Man"))
             movieDao.insert(Movie(name="Avengers"))
         }
