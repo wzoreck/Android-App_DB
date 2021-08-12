@@ -10,7 +10,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.app_db.R
+import com.example.app_db.data.Application
 import com.example.app_db.data.director.DirectorViewModel
+import com.example.app_db.data.movie.Movie
 import com.example.app_db.databinding.FragmentDirectorBinding
 
 class DirectorFragment : Fragment(R.layout.fragment_director) {
@@ -46,7 +48,7 @@ class DirectorFragment : Fragment(R.layout.fragment_director) {
         binding.txtDirectorName.text = director.name
 
         binding.btnTempMovie.setOnClickListener {
-            val action = DirectorFragmentDirections.actionDirectorFragmentToMovieFragment()
+            val action = DirectorFragmentDirections.actionDirectorFragmentToMovieFragment(Movie(name="Teste Movie"))
             findNavController().navigate(action)
         }
 

@@ -1,7 +1,6 @@
 package com.example.app_db.data.director
 
 import androidx.room.*
-import com.example.app_db.data.director.Director
 import kotlinx.coroutines.flow.Flow
 
 @Dao

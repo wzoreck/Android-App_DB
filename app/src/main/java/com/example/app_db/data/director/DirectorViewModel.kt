@@ -9,19 +9,19 @@ class DirectorViewModel(private val directorRepository: ApplicationRepository): 
     val allDirectors: LiveData<List<Director>> = directorRepository.allDirectors.asLiveData()
 
     fun insert(director: Director) = viewModelScope.launch {
-        directorRepository.insert(director)
+        directorRepository.insertDirector(director)
     }
 
     fun update(director: Director) = viewModelScope.launch {
-        directorRepository.update(director)
+        directorRepository.updateDirector(director)
     }
 
     fun delete(director: Director) = viewModelScope.launch {
-        directorRepository.delete(director)
+        directorRepository.deleteDirector(director)
     }
 
     fun deleteAll() = viewModelScope.launch {
-        directorRepository.deleteAll()
+        directorRepository.deleteAllDirectors()
     }
 
     class DirectorViewModelFactory(private val directorRepository: ApplicationRepository) : ViewModelProvider.Factory {

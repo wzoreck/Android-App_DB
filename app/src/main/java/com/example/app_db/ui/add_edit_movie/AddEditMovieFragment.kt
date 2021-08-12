@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.app_db.R
+import com.example.app_db.data.movie.Movie
 import com.example.app_db.databinding.FragmentAddEditMovieBinding
 
 class AddEditMovieFragment : Fragment(R.layout.fragment_add_edit_movie)  {
@@ -33,7 +34,9 @@ class AddEditMovieFragment : Fragment(R.layout.fragment_add_edit_movie)  {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnSaveNewMovie.setOnClickListener {
-            val action = AddEditMovieFragmentDirections.actionAddEditMovieFragmentToMovieFragment()
+            val action = AddEditMovieFragmentDirections.actionAddEditMovieFragmentToMovieFragment(
+                Movie(name="Teste Movie")
+            )
             findNavController().navigate(action)
         }
     }

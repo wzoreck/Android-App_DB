@@ -28,6 +28,11 @@
         <action
             android:id="@+id/action_addEditMovieFragment_to_movieFragment"
             app:destination="@id/movieFragment" />
+        <argument
+            android:name="movie"
+            app:argType="com.example.app_db.data.movie.Movie"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
     <fragment
         android:id="@+id/movieFragment"
@@ -43,6 +48,9 @@
         <action
             android:id="@+id/action_movieFragment_to_directorsFragment"
             app:destination="@id/directorsFragment" />
+        <argument
+            android:name="movie"
+            app:argType="com.example.app_db.data.movie.Movie" />
     </fragment>
     <fragment
         android:id="@+id/directorsFragment"
@@ -75,7 +83,7 @@
             app:destination="@id/addEditDirectorFragment" />
         <argument
             android:name="director"
-            app:argType="com.example.app_db.data.Director" />
+            app:argType="com.example.app_db.data.director.Director" />
     </fragment>
     <fragment
         android:id="@+id/addEditDirectorFragment"
@@ -87,7 +95,7 @@
             app:destination="@id/directorFragment" />
         <argument
             android:name="director"
-            app:argType="com.example.app_db.data.Director"
+            app:argType="com.example.app_db.data.director.Director"
             app:nullable="true"
             android:defaultValue="@null" />
     </fragment>
