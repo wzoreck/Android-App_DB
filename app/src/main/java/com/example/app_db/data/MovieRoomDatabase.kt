@@ -41,7 +41,7 @@ abstract class MovieRoomDatabase: RoomDatabase() {
     ): RoomDatabase.Callback() {
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)
-            MovieRoomDatabase.INSTANCE?.let { database ->
+            INSTANCE?.let { database ->
                 scope.launch(Dispatchers.IO) {
                     populateDatabase(database.movieDao())
                 }
@@ -49,7 +49,7 @@ abstract class MovieRoomDatabase: RoomDatabase() {
         }
 
         suspend fun populateDatabase(movieDao: MovieDAO) {
-//          movieDao.deleteAll()
+            movieDao.deleteAll()
             movieDao.insert(Movie(name="Iron Man"))
             movieDao.insert(Movie(name="Avengers"))
         }
