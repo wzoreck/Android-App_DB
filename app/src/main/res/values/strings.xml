@@ -2,4 +2,8 @@
     <string name="app_name">App_DB</string>
     <string name="director">Director</string>
     <string name="description">Description</string>
+    <string name="directors_name">Director\'s Name</string>
+    <string name="save">Save</string>
+    <string name="add_director">Add Director</string>
+    <string name="movies">Movies</string>
 </resources>

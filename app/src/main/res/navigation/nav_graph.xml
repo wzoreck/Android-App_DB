@@ -82,5 +82,10 @@
         <action
             android:id="@+id/action_addEditDirectorFragment_to_directorFragment"
             app:destination="@id/directorFragment" />
+        <argument
+            android:name="director"
+            app:argType="com.example.app_db.data.Director"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
 </navigation>

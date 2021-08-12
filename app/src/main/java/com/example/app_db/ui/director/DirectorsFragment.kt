@@ -1,9 +1,7 @@
 package com.example.app_db.ui.director
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -37,10 +35,16 @@ class DirectorsFragment: Fragment(R.layout.fragment_directors), DirectorAdapter.
         directorViewModel.allDirectors.observe(viewLifecycleOwner) {
             directorAdapter.submitList(it)
         }
+
+        binding.btnAddNewDirector.setOnClickListener {
+            val action = DirectorsFragmentDirections.actionDirectorsFragmentToAddEditDirectorFragment()
+            findNavController().navigate(action)
+        }
     }
 
     override fun onItemClickListener(director: Director) {
-
+        var action = DirectorsFragmentDirections.actionDirectorsFragmentToAddEditDirectorFragment(director)
+        findNavController().navigate(action)
     }
 
     /*
