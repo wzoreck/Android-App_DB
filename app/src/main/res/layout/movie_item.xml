@@ -6,7 +6,7 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="115dp"
+        android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:background="@color/background_movie_item"
         android:orientation="horizontal">
@@ -36,17 +36,6 @@
                 android:layout_marginTop="4dp"
                 android:maxLines="1"
                 android:text="@string/director"
-                android:textColor="@color/text_gray"
-                android:textSize="14dp"
-                android:fontFamily="monospace"/>
-
-            <TextView
-                android:id="@+id/txtMovieDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:maxLines="1"
-                android:text="@string/description"
                 android:textColor="@color/text_gray"
                 android:textSize="14dp"
                 android:fontFamily="monospace"/>
