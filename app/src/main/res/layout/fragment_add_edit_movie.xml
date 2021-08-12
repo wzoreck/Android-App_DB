@@ -17,13 +17,32 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnSaveNewMovie"
+        android:id="@+id/btnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
-        app:layout_constraintEnd_toEndOf="@+id/txtAddEditMovieFragment"
-        app:layout_constraintStart_toStartOf="@+id/txtAddEditMovieFragment"
-        app:layout_constraintTop_toBottomOf="@+id/txtAddEditMovieFragment"
-        android:layout_marginTop="70dp" />
+        android:layout_marginTop="32dp"
+        android:text="@string/save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/movieNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Movie Name"
+            android:inputType="textPersonName" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
