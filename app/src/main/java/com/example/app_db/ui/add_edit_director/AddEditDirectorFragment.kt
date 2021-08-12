@@ -9,16 +9,15 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.app_db.DirectorApplication
 import com.example.app_db.R
-import com.example.app_db.data.Director
-import com.example.app_db.data.DirectorViewModel
+import com.example.app_db.data.director.Director
+import com.example.app_db.data.director.DirectorViewModel
 import com.example.app_db.databinding.FragmentAddEditDirectorBinding
 
 class AddEditDirectorFragment : Fragment(R.layout.fragment_add_edit_director) {
 
     private val directorViewModel: DirectorViewModel by viewModels {
-        DirectorViewModel.DirectorViewModelFactory((activity?.application as DirectorApplication).repository)
+        DirectorViewModel.DirectorViewModelFactory((activity?.application as Application).repository)
     }
 
     private var _binding: FragmentAddEditDirectorBinding? = null
@@ -62,7 +61,8 @@ class AddEditDirectorFragment : Fragment(R.layout.fragment_add_edit_director) {
                     }
 
                     val action = AddEditDirectorFragmentDirections.actionAddEditDirectorFragmentToDirectorFragment(
-                        Director(name = directorName))
+                        Director(name = directorName)
+                    )
                     findNavController().navigate(action)
                 }
             }

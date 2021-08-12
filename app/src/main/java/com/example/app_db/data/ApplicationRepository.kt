@@ -1,9 +1,11 @@
 package com.example.app_db.data
 
 import androidx.annotation.WorkerThread
+import com.example.app_db.data.director.Director
+import com.example.app_db.data.director.DirectorDAO
 import kotlinx.coroutines.flow.Flow
 
-class DirectorRepository(private val directorDao: DirectorDAO) {
+class ApplicationRepository(private val directorDao: DirectorDAO) {
 
     val allDirector: Flow<List<Director>> = directorDao.getDirectors()
 

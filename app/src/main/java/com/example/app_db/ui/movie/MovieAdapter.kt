@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.app_db.data.Movie
+import com.example.app_db.data.movie.Movie
 import com.example.app_db.databinding.MovieItemBinding
 
 

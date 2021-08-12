@@ -6,16 +6,15 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.app_db.DirectorApplication
 import com.example.app_db.R
-import com.example.app_db.data.Director
-import com.example.app_db.data.DirectorViewModel
+import com.example.app_db.data.director.Director
+import com.example.app_db.data.director.DirectorViewModel
 import com.example.app_db.databinding.FragmentDirectorsBinding
 
 class DirectorsFragment: Fragment(R.layout.fragment_directors), DirectorAdapter.OnItemClickListener {
 
     private val directorViewModel: DirectorViewModel by viewModels {
-        DirectorViewModel.DirectorViewModelFactory((activity?.application as DirectorApplication).repository)
+        DirectorViewModel.DirectorViewModelFactory((activity?.application as Application).repository)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

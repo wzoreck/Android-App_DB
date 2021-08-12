@@ -1,9 +1,10 @@
-package com.example.app_db.data
+package com.example.app_db.data.director
 
 import androidx.lifecycle.*
+import com.example.app_db.data.ApplicationRepository
 import kotlinx.coroutines.launch
 
-class DirectorViewModel(private val directorRepository: DirectorRepository): ViewModel() {
+class DirectorViewModel(private val directorRepository: ApplicationRepository): ViewModel() {
 
     val allDirectors: LiveData<List<Director>> = directorRepository.allDirector.asLiveData()
 
@@ -23,7 +24,7 @@ class DirectorViewModel(private val directorRepository: DirectorRepository): Vie
         directorRepository.deleteAll()
     }
 
-    class DirectorViewModelFactory(private val directorRepository: DirectorRepository) : ViewModelProvider.Factory {
+    class DirectorViewModelFactory(private val directorRepository: ApplicationRepository) : ViewModelProvider.Factory {
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
             if(modelClass.isAssignableFrom(DirectorViewModel::class.java)) {
                 @Suppress("UNCHECKED_CAST")

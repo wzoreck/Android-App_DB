@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.app_db.data.Director
+import com.example.app_db.data.director.Director
 import com.example.app_db.databinding.DirectorItemBinding
 
 class DirectorAdapter(private val listener: OnItemClickListener) : ListAdapter<Director, DirectorAdapter.DirectorViewHolder>(DIRECTOR_COMPARATOR){

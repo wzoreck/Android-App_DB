@@ -5,27 +5,29 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.example.app_db.data.director.Director
+import com.example.app_db.data.director.DirectorDAO
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @Database(entities = [Director::class], version = 1)
-abstract class DirectorRoomDatabase : RoomDatabase() {
+abstract class ApplicationRoomDatabase : RoomDatabase() {
 
     abstract fun directorDao(): DirectorDAO
 
     companion object {
         @Volatile
-        private var INSTANCE: DirectorRoomDatabase? = null
+        private var INSTANCE: ApplicationRoomDatabase? = null
 
         fun getDatabase(
             context: Context,
             scope: CoroutineScope
-        ): DirectorRoomDatabase {
+        ): ApplicationRoomDatabase {
             return INSTANCE?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    DirectorRoomDatabase::class.java,
+                    ApplicationRoomDatabase::class.java,
                     "database"
                 ).fallbackToDestructiveMigration()
                 .addCallback(DirectorDatabaseCallback(scope))

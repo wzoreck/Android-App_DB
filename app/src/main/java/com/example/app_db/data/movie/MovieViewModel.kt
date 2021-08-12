@@ -1,4 +1,4 @@
-package com.example.app_db.data
+package com.example.app_db.data.movie
 
 import androidx.lifecycle.*
 import kotlinx.coroutines.launch
