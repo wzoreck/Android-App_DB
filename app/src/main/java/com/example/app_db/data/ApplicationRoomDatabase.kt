@@ -64,8 +64,8 @@ abstract class ApplicationRoomDatabase : RoomDatabase() {
             movieDao.insert(Movie(1, "Kill Bill - Volume 1"))
             movieDao.insert(Movie(2, "Kill Bill - Volume 2"))
             movieDao.insert(Movie(3, "Senhor dos Anéis"))
-            movieDao.insert(Movie(3, "Clube da Luta"))
-            movieDao.insert(Movie(3, "Star Wars"))
+            movieDao.insert(Movie(4, "Clube da Luta"))
+            movieDao.insert(Movie(5, "Star Wars"))
         }
     }
     
