@@ -27,8 +27,8 @@ class DirectorAdapter(private val listener: OnItemClickListener) : ListAdapter<D
                 root.setOnClickListener {
                     val position = adapterPosition
                     if(position != RecyclerView.NO_POSITION){
-                        val task = getItem(position)
-                        listener.onItemClickListener(task)
+                        val director = getItem(position)
+                        listener.onItemClickListener(director)
                     }
                 }
             }
