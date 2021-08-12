@@ -37,7 +37,7 @@ class MovieAdapter(private val listener: OnItemClickListener): ListAdapter<Movie
 
         fun bind(movie: Movie){
             binding.apply {
-                //txtDirectorName.text = director.name
+                txtMovieName.text = movie.name
             }
         }
 

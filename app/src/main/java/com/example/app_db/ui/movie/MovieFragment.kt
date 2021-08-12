@@ -5,14 +5,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.app_db.R
+import com.example.app_db.data.Application
+import com.example.app_db.data.movie.MovieViewModel
 import com.example.app_db.databinding.FragmentMovieBinding
 
 class MovieFragment : Fragment(R.layout.fragment_movie) {
 
+    private val movieViewModel: MovieViewModel by viewModels {
+        MovieViewModel.MovieViewModelFactory((activity?.application as Application).repository)
+    }
+
     private var _binding: FragmentMovieBinding? = null
     private val binding get() = _binding!!
+
+    val args: MovieFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,6 +41,10 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        var movie = args.movie
+
+        binding.txtMovieName.text = movie.name
 
         binding.btnTempDirectors.setOnClickListener {
             val action = MovieFragmentDirections.actionMovieFragmentToDirectorsFragment()
