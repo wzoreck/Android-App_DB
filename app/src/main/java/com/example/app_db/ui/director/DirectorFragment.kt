@@ -47,6 +47,8 @@ class DirectorFragment : Fragment(R.layout.fragment_director) {
 
         var director = args.director
 
+        binding.txtDirectorName.text = director.name
+
         binding.btnTempMovie.setOnClickListener {
             val action = DirectorFragmentDirections.actionDirectorFragmentToMovieFragment()
             findNavController().navigate(action)
