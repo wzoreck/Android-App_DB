@@ -29,17 +29,6 @@
                 android:textStyle="bold"
                 android:fontFamily="monospace"/>
 
-            <TextView
-                android:id="@+id/txtMovieDirector"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:maxLines="1"
-                android:text="@string/director"
-                android:textColor="@color/text_gray"
-                android:textSize="14dp"
-                android:fontFamily="monospace"/>
-
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>

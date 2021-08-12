@@ -46,11 +46,6 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
 
         binding.txtMovieName.text = movie.name
 
-        binding.btnTempDirectors.setOnClickListener {
-            val action = MovieFragmentDirections.actionMovieFragmentToDirectorsFragment()
-            findNavController().navigate(action)
-        }
-
         binding.btnEdit.setOnClickListener {
             val action = MovieFragmentDirections.actionMovieFragmentToAddEditMovieFragment()
             findNavController().navigate(action)

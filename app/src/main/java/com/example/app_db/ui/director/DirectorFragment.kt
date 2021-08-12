@@ -47,11 +47,6 @@ class DirectorFragment : Fragment(R.layout.fragment_director) {
 
         binding.txtDirectorName.text = director.name
 
-        binding.btnTempMovie.setOnClickListener {
-            val action = DirectorFragmentDirections.actionDirectorFragmentToMovieFragment(Movie(name="Teste Movie"))
-            findNavController().navigate(action)
-        }
-
         binding.btnEdit.setOnClickListener {
             val action = DirectorFragmentDirections.actionDirectorFragmentToAddEditDirectorFragment(director)
             findNavController().navigate(action)
