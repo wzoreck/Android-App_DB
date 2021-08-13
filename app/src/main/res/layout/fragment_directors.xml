@@ -19,24 +19,20 @@
 
     </androidx.recyclerview.widget.RecyclerView>
 
-    <Button
-        android:id="@+id/btnAddNewDirector"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/btnAddNewDirector"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/backgroud_button"
+        android:fontFamily="monospace"
+        app:fabSize="normal"
         android:text="@string/add_director"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="40dp"
-        android:layout_marginRight="40dp" />
-
-    <Button
-        android:id="@+id/btnMovies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/movies"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="40dp"
-        android:layout_marginLeft="40dp" />
+        android:src="@drawable/ic_baseline_person_add_24"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
