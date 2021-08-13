@@ -43,10 +43,6 @@ class HomeFragment : Fragment(R.layout.fragment_home), MovieAdapter.OnItemClickL
             findNavController().navigate(action)
         }
 
-        binding.btnDirectors.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToDirectorsFragment()
-            findNavController().navigate(action)
-        }
     }
 
     override fun onItemClickListener(movie: Movie) {

@@ -51,10 +51,6 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
             findNavController().navigate(action)
         }
 
-        binding.btnMovies.setOnClickListener {
-            val action = MovieFragmentDirections.actionMovieFragmentToHomeFragment()
-            findNavController().navigate(action)
-        }
 
         binding.btnRemove.setOnClickListener {
             movieViewModel.delete(movie)

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:title="Movies"
+        android:icon="@drawable/ic_baseline_local_movies_24"
+        android:iconTint="@color/white"></item>
+
+    <item
+        android:id="@+id/directorsFragment"
+        android:title="Directors"
+        android:icon="@drawable/ic_baseline_people_alt_24"
+        android:iconTint="@color/white"/>
+
+
+</menu>

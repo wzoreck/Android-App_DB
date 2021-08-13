@@ -10,5 +10,7 @@
     <color name="backgroud_button">#086A87</color>
     <color name="background_movie_item">#E0ECF8</color>
     <color name="text_gray">#424242</color>
+    <color name="yellow_background"></color>
+    <color name="light_pink_background"></color>
 
 </resources>

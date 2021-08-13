@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:fontFamily="casual"
+        android:fontFamily="sans-serif"
         android:text="Director Fragment"
         android:textAllCaps="false"
         android:textSize="40sp"
@@ -39,30 +39,27 @@
         android:id="@+id/btnRemove"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="@color/backgroud_button"
+        android:fontFamily="monospace"
         android:text="Remove"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="40dp" />
-
-    <Button
-        android:id="@+id/btnDirectors"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Directors"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnRemove"
         app:layout_constraintStart_toEndOf="@+id/btnEdit"
-        android:layout_marginBottom="40dp" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewMovies" />
 
     <Button
         android:id="@+id/btnEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/backgroud_button"
+        android:fontFamily="monospace"
         android:text="Edit"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnRemove"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="40dp"
-        android:layout_marginBottom="40dp" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewMovies" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
