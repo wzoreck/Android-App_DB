@@ -52,11 +52,6 @@ class DirectorFragment : Fragment(R.layout.fragment_director) {
             findNavController().navigate(action)
         }
 
-        binding.btnDirectors.setOnClickListener {
-            val action = DirectorFragmentDirections.actionDirectorFragmentToDirectorsFragment()
-            findNavController().navigate(action)
-        }
-
         binding.btnRemove.setOnClickListener {
             directorViewModel.delete(director)
             val action = DirectorFragmentDirections.actionDirectorFragmentToDirectorsFragment()

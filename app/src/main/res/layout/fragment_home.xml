@@ -20,30 +20,17 @@
 
     </androidx.recyclerview.widget.RecyclerView>
 
-    <Button
-        android:id="@+id/btnAddNewMovie"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/btnAddNewMovie"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/backgroud_button"
         android:text="Add Movie"
+        app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="40dp"
-        android:layout_marginRight="40dp"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/backgroud_button"
-        android:fontFamily="monospace"/>
-
-    <Button
-        android:id="@+id/btnDirectors"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Directors"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="40dp"
-        android:layout_marginLeft="40dp"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/backgroud_button"
-        android:fontFamily="monospace"/>
+        android:src="@drawable/ic_baseline_add_24"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
