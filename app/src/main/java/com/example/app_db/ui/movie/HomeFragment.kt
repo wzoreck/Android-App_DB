@@ -15,8 +15,6 @@ import com.example.app_db.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment(R.layout.fragment_home), MovieAdapter.OnItemClickListener {
 
-
-
     private val movieViewModel: MovieViewModel by viewModels {
         MovieViewModel.MovieViewModelFactory((activity?.application as Application).repository)
     }

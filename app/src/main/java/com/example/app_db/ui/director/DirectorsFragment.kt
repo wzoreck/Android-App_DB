@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.app_db.R
 import com.example.app_db.data.Application
+import com.example.app_db.data.DirectorWithMovies
 import com.example.app_db.data.director.Director
 import com.example.app_db.data.director.DirectorViewModel
 import com.example.app_db.databinding.FragmentDirectorsBinding
@@ -32,7 +33,7 @@ class DirectorsFragment: Fragment(R.layout.fragment_directors), DirectorAdapter.
             }
         }
 
-        directorViewModel.allDirectors.observe(viewLifecycleOwner) {
+        directorViewModel.allDirectorsWithMovies.observe(viewLifecycleOwner) {
             directorAdapter.submitList(it)
         }
 
@@ -42,8 +43,8 @@ class DirectorsFragment: Fragment(R.layout.fragment_directors), DirectorAdapter.
         }
     }
 
-    override fun onItemClickListener(director: Director) {
-        val action = DirectorsFragmentDirections.actionDirectorsFragmentToDirectorFragment(director)
+    override fun onItemClickListener(director: DirectorWithMovies) {
+        val action = DirectorsFragmentDirections.actionDirectorsFragmentToDirectorFragment(director.director)
         findNavController().navigate(action)
     }
 

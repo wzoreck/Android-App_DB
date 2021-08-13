@@ -39,7 +39,7 @@ class MovieAdapter(private val listener: OnItemClickListener): ListAdapter<Movie
         fun bind(movieWithDirector: MovieWithDirector){
             binding.apply {
                 txtMovieName.text = movieWithDirector.movie.name
-                directorNameTextView.text = "by ${movieWithDirector.director.name}"
+                txtDirectorName.text = "by ${movieWithDirector.director.name}"
             }
         }
 

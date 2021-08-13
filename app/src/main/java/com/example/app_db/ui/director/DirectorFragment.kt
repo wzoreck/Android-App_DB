@@ -62,10 +62,5 @@ class DirectorFragment : Fragment(R.layout.fragment_director) {
             val action = DirectorFragmentDirections.actionDirectorFragmentToDirectorsFragment()
             findNavController().navigate(action)
         }
-
-//        val callbackList = requireActivity().onBackPressedDispatcher.addCallback(this) {
-//            var action = DirectorFragmentDirections.actionDirectorFragmentToDirectorsFragment()
-//            findNavController().navigate(action)
-//        }
     }
 }
