@@ -19,5 +19,5 @@ import kotlinx.parcelize.Parcelize
 data class Movie (
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val name: String,
-//    val directorId: Int,
+    val directorId: Int,
 ) : Parcelable{}

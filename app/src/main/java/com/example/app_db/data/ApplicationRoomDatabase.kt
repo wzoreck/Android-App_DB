@@ -55,17 +55,17 @@ abstract class ApplicationRoomDatabase : RoomDatabase() {
 
         suspend fun populateDatabase(directorDao: DirectorDAO, movieDao: MovieDAO) {
             directorDao.deleteAll()
-            directorDao.insert(Director(0, "Quentin Tarantino"))
-            directorDao.insert(Director(1, "Peter Jackson"))
-            directorDao.insert(Director(2, "David Fincher"))
-            directorDao.insert(Director(3, "George Lucas"))
+            directorDao.insert(Director(name="Quentin Tarantino"))
+            directorDao.insert(Director(name="Peter Jackson"))
+            directorDao.insert(Director(name="David Fincher"))
+            directorDao.insert(Director(name="George Lucas"))
 
-            movieDao.insert(Movie(0, "Pulp Fiction"))
-            movieDao.insert(Movie(1, "Kill Bill - Volume 1"))
-            movieDao.insert(Movie(2, "Kill Bill - Volume 2"))
-            movieDao.insert(Movie(3, "Senhor dos Anéis"))
-            movieDao.insert(Movie(4, "Clube da Luta"))
-            movieDao.insert(Movie(5, "Star Wars"))
+            movieDao.insert(Movie(0, "Pulp Fiction", 1))
+            movieDao.insert(Movie(1, "Kill Bill - Volume 1", 1))
+            movieDao.insert(Movie(2, "Kill Bill - Volume 2", 1))
+            movieDao.insert(Movie(3, "Senhor dos Anéis", 2))
+            movieDao.insert(Movie(4, "Clube da Luta", 3))
+            movieDao.insert(Movie(5, "Star Wars", 4))
         }
     }
     

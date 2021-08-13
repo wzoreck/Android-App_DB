@@ -11,7 +11,8 @@ class ApplicationRepository(private val directorDao: DirectorDAO, private val mo
 
     val allDirectors: Flow<List<Director>> = directorDao.getDirectors()
     val allMovies: Flow<List<Movie>> = movieDao.getMovies()
-    // Adicionar aqui os relacionados
+    val allDirectorsWithMovies: Flow<List<DirectorWithMovies>> = directorDao.getDirectorWithMovies()
+    val allMoviesWithDirector: Flow<List<MovieWithDirector>> = movieDao.getMovieWithDirector()
 
     // Director
     @Suppress("RedundantSuspendModifier")

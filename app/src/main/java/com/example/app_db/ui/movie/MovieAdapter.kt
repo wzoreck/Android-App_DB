@@ -5,11 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.app_db.data.MovieWithDirector
 import com.example.app_db.data.movie.Movie
 import com.example.app_db.databinding.MovieItemBinding
 
 
-class MovieAdapter(private val listener: OnItemClickListener): ListAdapter<Movie, MovieAdapter.MovieViewHolder>(MovieAdapter.MOVIE_COMPARATOR) {
+class MovieAdapter(private val listener: OnItemClickListener): ListAdapter<MovieWithDirector, MovieAdapter.MovieViewHolder>(MovieAdapter.MOVIE_COMPARATOR) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val binding = MovieItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -35,25 +36,26 @@ class MovieAdapter(private val listener: OnItemClickListener): ListAdapter<Movie
             }
         }
 
-        fun bind(movie: Movie){
+        fun bind(movieWithDirector: MovieWithDirector){
             binding.apply {
-                txtMovieName.text = movie.name
+                txtMovieName.text = movieWithDirector.movie.name
+                directorNameTextView.text = "by ${movieWithDirector.director.name}"
             }
         }
 
     }
 
     interface OnItemClickListener {
-        fun onItemClickListener(movie: Movie)
+        fun onItemClickListener(movie: MovieWithDirector)
     }
 
     companion object {
-        private val MOVIE_COMPARATOR = object : DiffUtil.ItemCallback<Movie>(){
-            override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean {
-                return oldItem.id == newItem.id
+        private val MOVIE_COMPARATOR = object : DiffUtil.ItemCallback<MovieWithDirector>(){
+            override fun areItemsTheSame(oldItem: MovieWithDirector, newItem: MovieWithDirector): Boolean {
+                return oldItem.movie.id == newItem.movie.id
             }
 
-            override fun areContentsTheSame(oldItem: Movie, newItem: Movie): Boolean {
+            override fun areContentsTheSame(oldItem: MovieWithDirector, newItem: MovieWithDirector): Boolean {
                 return oldItem == newItem
             }
         }

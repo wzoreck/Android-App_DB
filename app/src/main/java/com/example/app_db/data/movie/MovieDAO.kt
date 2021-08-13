@@ -1,6 +1,7 @@
 package com.example.app_db.data.movie
 
 import androidx.room.*
+import com.example.app_db.data.MovieWithDirector
 import com.example.app_db.data.movie.Movie
 import kotlinx.coroutines.flow.Flow
 
@@ -9,6 +10,10 @@ public interface MovieDAO   {
 
     @Query ("SELECT * FROM movies_table")
     fun getMovies(): Flow<List<Movie>>
+
+    @Transaction
+    @Query ("SELECT * FROM movies_table")
+    fun getMovieWithDirector(): Flow<List<MovieWithDirector>>
 
     @Insert (onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(movie: Movie)

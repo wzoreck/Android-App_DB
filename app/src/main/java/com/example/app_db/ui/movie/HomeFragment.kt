@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.app_db.R
 import com.example.app_db.data.Application
+import com.example.app_db.data.MovieWithDirector
 import com.example.app_db.data.movie.Movie
 import com.example.app_db.data.movie.MovieViewModel
 import com.example.app_db.databinding.FragmentHomeBinding
@@ -34,7 +35,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), MovieAdapter.OnItemClickL
             }
         }
 
-        movieViewModel.allMovies.observe(viewLifecycleOwner) {
+        movieViewModel.allMoviesWithDirector.observe(viewLifecycleOwner) {
             movieAdapter.submitList(it)
         }
 
@@ -49,8 +50,8 @@ class HomeFragment : Fragment(R.layout.fragment_home), MovieAdapter.OnItemClickL
         }
     }
 
-    override fun onItemClickListener(movie: Movie) {
-        val action = HomeFragmentDirections.actionHomeFragmentToMovieFragment(movie)
+    override fun onItemClickListener(movieWithDirector: MovieWithDirector) {
+        val action = HomeFragmentDirections.actionHomeFragmentToMovieFragment(movieWithDirector.movie)
         findNavController().navigate(action)
     }
 

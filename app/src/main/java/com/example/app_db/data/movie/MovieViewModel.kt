@@ -2,26 +2,28 @@ package com.example.app_db.data.movie
 
 import androidx.lifecycle.*
 import com.example.app_db.data.ApplicationRepository
+import com.example.app_db.data.MovieWithDirector
 import kotlinx.coroutines.launch
 
-class MovieViewModel(private val movieRepository: ApplicationRepository): ViewModel() {
+class MovieViewModel(private val applicationRepository: ApplicationRepository): ViewModel() {
 
-    val allMovies: LiveData<List<Movie>> = movieRepository.allMovies.asLiveData()
+    val allMovies: LiveData<List<Movie>> = applicationRepository.allMovies.asLiveData()
+    val allMoviesWithDirector: LiveData<List<MovieWithDirector>> = applicationRepository.allMoviesWithDirector.asLiveData()
 
     fun insert(movie: Movie) = viewModelScope.launch {
-        movieRepository.insertMovie(movie)
+        applicationRepository.insertMovie(movie)
     }
 
     fun update(movie: Movie) = viewModelScope.launch {
-        movieRepository.updateMovie(movie)
+        applicationRepository.updateMovie(movie)
     }
 
     fun delete(movie: Movie) = viewModelScope.launch {
-        movieRepository.deleteMovie(movie)
+        applicationRepository.deleteMovie(movie)
     }
 
     fun deleteAll() = viewModelScope.launch {
-        movieRepository.deleteAllMovies()
+        applicationRepository.deleteAllMovies()
     }
 
     class MovieViewModelFactory(private val movieRepository: ApplicationRepository) : ViewModelProvider.Factory {

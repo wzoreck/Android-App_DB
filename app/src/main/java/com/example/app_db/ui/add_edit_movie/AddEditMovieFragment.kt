@@ -45,7 +45,7 @@ class AddEditMovieFragment : Fragment(R.layout.fragment_add_edit_movie)  {
         super.onViewCreated(view, savedInstanceState)
 
         val newMovie = args.movie == null
-        val movie = args?.movie ?: Movie(name = "")
+        val movie = args?.movie ?: Movie(name = "", directorId = 1)
 
         binding.apply {
             movieNameEditText.setText(movie.name)
@@ -57,14 +57,14 @@ class AddEditMovieFragment : Fragment(R.layout.fragment_add_edit_movie)  {
                     Toast.makeText(context, "Enter the movie name", Toast.LENGTH_SHORT).show()
                 } else {
                     if (newMovie) {
-                        movieViewModel.insert(Movie(name = movieName))
+                        movieViewModel.insert(Movie(name = movieName, directorId = 1))
                     } else {
-                        movieViewModel.update(movie.copy(name = movieName))
+                        movieViewModel.update(movie.copy(name = movieName, directorId = 1))
                     }
 
                     val action =
                         AddEditMovieFragmentDirections.actionAddEditMovieFragmentToMovieFragment(
-                            Movie(name = movieName)
+                            Movie(name = movieName, directorId = 1)
                         )
                     findNavController().navigate(action)
                 }

@@ -2,26 +2,28 @@ package com.example.app_db.data.director
 
 import androidx.lifecycle.*
 import com.example.app_db.data.ApplicationRepository
+import com.example.app_db.data.DirectorWithMovies
 import kotlinx.coroutines.launch
 
-class DirectorViewModel(private val directorRepository: ApplicationRepository): ViewModel() {
+class DirectorViewModel(private val applicationRepository: ApplicationRepository): ViewModel() {
 
-    val allDirectors: LiveData<List<Director>> = directorRepository.allDirectors.asLiveData()
+    val allDirectors: LiveData<List<Director>> = applicationRepository.allDirectors.asLiveData()
+    val allDirectorsWithMovies: LiveData<List<DirectorWithMovies>> = applicationRepository.allDirectorsWithMovies.asLiveData()
 
     fun insert(director: Director) = viewModelScope.launch {
-        directorRepository.insertDirector(director)
+        applicationRepository.insertDirector(director)
     }
 
     fun update(director: Director) = viewModelScope.launch {
-        directorRepository.updateDirector(director)
+        applicationRepository.updateDirector(director)
     }
 
     fun delete(director: Director) = viewModelScope.launch {
-        directorRepository.deleteDirector(director)
+        applicationRepository.deleteDirector(director)
     }
 
     fun deleteAll() = viewModelScope.launch {
-        directorRepository.deleteAllDirectors()
+        applicationRepository.deleteAllDirectors()
     }
 
     class DirectorViewModelFactory(private val directorRepository: ApplicationRepository) : ViewModelProvider.Factory {

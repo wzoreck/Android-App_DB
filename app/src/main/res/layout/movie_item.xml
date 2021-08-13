@@ -29,6 +29,12 @@
                 android:textStyle="bold"
                 android:fontFamily="monospace"/>
 
+            <TextView
+                android:id="@+id/directorNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/directors_name" />
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
